@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DeckController;
 use App\Http\Controllers\FlashcardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProgressController;
 
 // Удалите дублирующийся маршрут
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -13,6 +14,9 @@ use App\Http\Controllers\UserController;
 // });
 
 Route::middleware('auth:sanctum')->get('/user', [UserController::class, 'show']);
+
+Route::middleware('auth:sanctum')->post('/flashcards/{flashcardId}/progress/weight', [ProgressController::class, 'updateWeight']);
+
 
 Route::get('/register', function() {
     return response()->json(['message' => 'The GET method is not supported for this route. Supported methods: POST.'], 405);
@@ -28,4 +32,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/decks', [DeckController::class, 'index']);
 Route::get('/decks/{id}', [DeckController::class, 'show']);
 
-Route::get('decks/{deckId}/flashcards', [FlashcardController::class, 'getFlashcardsByDeck']);
+//Route::get('decks/{deckId}/flashcards', [FlashcardController::class, 'getFlashcardsByDeck']);
+Route::middleware('auth:sanctum')->get('decks/{deckId}/flashcards', [FlashcardController::class, 'getFlashcardsByDeck']);
+
+
+
+
