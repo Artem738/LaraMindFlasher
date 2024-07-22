@@ -51,7 +51,7 @@ class AuthController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'email' => 'required|string|email',
+                'email' => 'required|string',   //|email  FAST LOGIN TODO
                 'password' => 'required|string',
             ]);
 

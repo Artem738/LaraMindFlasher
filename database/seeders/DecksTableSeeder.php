@@ -10,12 +10,11 @@ class DecksTableSeeder extends Seeder
 {
     public function run()
     {
-        $user1 = User::where('email', 'john@example.com')->first();
-        $user2 = User::where('email', 'jane@example.com')->first();
+
 
         DB::table('decks')->insert([
             [
-                'user_id' => $user1->id,
+                'user_id' => 1,
                 'name' => 'Biology',
                 'description' => 'Biology flashcards for high school.',
                 'is_public' => true, // Пример публичной колоды
@@ -23,7 +22,7 @@ class DecksTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => $user1->id,
+                'user_id' => 2,
                 'name' => 'Chemistry',
                 'description' => 'Chemistry flashcards for high school.',
                 'is_public' => false, // Пример приватной колоды
@@ -31,7 +30,7 @@ class DecksTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => $user2->id,
+                'user_id' => 3,
                 'name' => 'Physics',
                 'description' => 'Physics flashcards for college.',
                 'is_public' => true, // Пример публичной колоды
@@ -39,7 +38,7 @@ class DecksTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => $user1->id,
+                'user_id' => 3,
                 'name' => 'English - Ru',
                 'description' => 'English-Russian words',
                 'is_public' => true, // Пример приватной колоды

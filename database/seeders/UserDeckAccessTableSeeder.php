@@ -18,14 +18,14 @@ class UserDeckAccessTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'deck_id' => 2,
                 'access_level' => 'owner',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 2,
+                'user_id' => 3,
                 'deck_id' => 3,
                 'access_level' => 'owner',
                 'created_at' => now(),
