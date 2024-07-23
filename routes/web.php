@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TelegramAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/auth/telegram', [TelegramAuthController::class, 'handleAuth']);
+
 Route::get('/', function () {
-    return view('welcome');
+    print("Hello...");
+    //return view('welcome');
 });
