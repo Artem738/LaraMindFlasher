@@ -7,6 +7,9 @@ use App\Http\Controllers\DeckController;
 use App\Http\Controllers\FlashcardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\TestController;
+
+Route::get('/test', [TestController::class, 'testFunc']);
 
 // Удалите дублирующийся маршрут
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

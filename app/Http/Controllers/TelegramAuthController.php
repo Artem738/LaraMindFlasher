@@ -10,6 +10,7 @@ class TelegramAuthController extends Controller
 {
     public function handleAuth(Request $request)
     {
+        Log::info('Received Telegram ahandleAuth - Runed');
         Log::info('Received Telegram auth request', $request->all());
 
         $data = $request->all();
